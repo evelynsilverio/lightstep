@@ -36,7 +36,7 @@
             tabindex="0"
             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
             <li><a>Aplicación</a></li>
-            <li><a>Acerca del Proyecto</a></li>
+            <li><a href="{% url 'acerca_proyecto' %}">Acerca del Proyecto</a></li>
             <li><a>Sobre Nosotros</a></li>
             <li><a>Contacto</a></li>
             </ul>
@@ -55,12 +55,12 @@
             </a>
             </li>
             <li class="m-2 relative">
-            <a class="rounded-lg p-3 mask mask-squircle relative
-                after:absolute after:left-1/2 after:bottom-1 after:-translate-x-1/2
-                after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-500 after:to-pink-500
-                after:transition-all after:duration-300 hover:after:w-3/4">
-                Acerca del Proyecto
-            </a>
+                <a href="{% url 'acerca_proyecto' %}" class="rounded-lg p-3 mask mask-squircle relative
+                    after:absolute after:left-1/2 after:bottom-1 after:-translate-x-1/2
+                    after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-500 after:to-pink-500
+                    after:transition-all after:duration-300 hover:after:w-3/4">
+                    Acerca del Proyecto
+                </a>
             </li>
             <li class="m-2 relative">
             <a class="rounded-lg p-3 mask mask-squircle relative

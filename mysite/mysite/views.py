@@ -14,3 +14,5 @@ def contacto(request):
 
 def nosotros(request):
     return render(request, "sobreNosotros.html", {})
+
+
