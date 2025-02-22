@@ -9,6 +9,9 @@ def base(request):
 def acerca(request):
     return render(request, "acercaProyecto.html", {})
 
+def proyecto(request):
+    return render(request, "proyecto.html", {})
+
 def contacto(request):
     return render(request, "contacto.html", {})
 

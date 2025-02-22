@@ -14,7 +14,16 @@
     <style>
     </style>
 </head>
+
 <body>
+
+    <!-- <style>
+        body {
+        background-color: #111;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 5px 5px;
+    }
+    </style> -->
     <style>
         .gradient-border {
             position: relative;
@@ -81,7 +90,7 @@
                 <a href="{% url 'acerca_proyecto' %}" class="rounded-lg p-3 mask mask-squircle relative
                     after:absolute after:left-1/2 after:bottom-1 after:-translate-x-1/2
                     after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-500 after:to-pink-500
-                    after:transition-all after:duration-300 hover:after:w-3/4">
+                    after:transition-all after:duration-300 hover:after:w-3/2">
                     Acerca del Proyecto
                 </a>
             </li>
@@ -125,34 +134,137 @@
     </header>
 
     <h1 class="text-6xl font-bold text-center mt-10 tracking-widest">LightStep</span></h1>
-    
-    <div class="flex justify-center space-x-6 mt-12">
-        <div class="bg-gradient-to-b from-cyan-500 to-blue-700 p-8 rounded-xl text-center shadow-lg w-60 h-40 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
-            <p class="text-white text-xl font-semibold">¿Qué es este proyecto?</p>
+
+    <div class="flex justify-center space-x-20 mt-12">
+        <a href="{% url 'proyecto' %}" class="neon-button bg-cyan">
+            <p class="text-white text-2xl font-semibold animate-bounce">¿Qué es este proyecto?</p>
+        </a>
+
+        <div class="neon-button bg-purple">
+            <p class="text-white text-2xl font-semibold animate-bounce">¿Cómo funciona?</p>
         </div>
-        <div class="bg-gradient-to-b from-purple-400 to-pink-600 p-8 rounded-xl text-center shadow-lg w-60 h-40 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
-            <p class="text-white text-xl font-semibold">¿Cómo funciona?</p>
-        </div>
-        <div class="bg-gradient-to-b from-yellow-400 to-orange-600 p-8 rounded-xl text-center shadow-lg w-60 h-40 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
-            <p class="text-white text-xl font-semibold">Costos</p>
+
+        <div class="neon-button bg-yellow">
+            <p class="text-white text-2xl font-semibold animate-bounce">Costos</p>
         </div>
     </div>
-    
-    
-    <section class="text-center mt-20">
-        <h2 class="text-3xl font-bold inline-block px-8 py-3 shadow-lg bg-black gradient-border">¿Por qué es importante?</h2>
-        <p class="mt-6 max-w-3xl mx-auto text-gray-300 text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisici elit...</p>
-    </section>
-    
-    <section class="text-center mt-20">
-        <h2 class="text-3xl font-bold inline-block px-8 py-3 shadow-lg bg-black gradient-border">Tecnologías Utilizadas</h2>
-        <p class="mt-6 max-w-3xl mx-auto text-gray-300 text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisici elit...</p>
-    </section>
-    
-    <section class="text-center mt-20 mb-20">
-        <h2 class="text-3xl font-bold inline-block px-8 py-3 shadow-lg bg-black gradient-border">Nuestro Enfoque</h2>
-        <p class="mt-6 max-w-3xl mx-auto text-gray-300 text-lg leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisici elit...</p>
-    </section>
+
+    <style>
+    .neon-button {
+        position: relative;
+        padding: 2.5rem;
+        width: 15rem;
+        height: 12rem;
+        text-align: center;
+        border-radius: 1rem;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /*Sombras y efecto de luz en hover*/
+    .neon-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px rgb(255, 255, 255);
+    }
+
+    /*Efecto de brillo*/
+    .neon-button::before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 70%);
+        top: -50%;
+        left: -50%;
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+
+    .neon-button:hover::before {
+        opacity: 1;
+    }
+
+    /*Efecto de escaneo*/
+    .neon-button::after {
+        content: "";
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        top: 0;
+        left: -150%;
+        transform: rotate(30deg);
+        animation: scan-effect 3s linear infinite;
+    }
+
+    @keyframes scan-effect {
+        0% { left: -150%; }
+        100% { left: 150%; }
+    }
+
+    .bg-cyan { background: linear-gradient(45deg, #06b6d4, #2563eb); }  /* Azul-cyan */
+    .bg-purple { background: linear-gradient(45deg, #a855f7, #ec4899); } /* Morado-rosa */
+    .bg-yellow { background: linear-gradient(45deg, #facc15, #ea580c); } /* Amarillo-naranja */
+    </style>
+
+<br>
+<section class="mt-20 px-8 sm:px-16 lg:px-32">
+    <h2 class="text-2xl font-bold inline-block px-8 py-3 shadow-lg bg-black gradient-border">
+        ¿Por qué es importante?
+    </h2>
+    <div class="mt-6 max-w-3xl ml-auto mr-0">
+        <p class="text-gray-300 text-lg leading-relaxed text-left">
+            En un mundo donde la automatización y la eficiencia energética son clave, nuestro sistema de iluminación inteligente para escaleras ofrece:
+        </p>
+        <ul class="mt-4 text-gray-300 text-lg leading-relaxed list-disc pl-5">
+            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></span>Seguridad: Reduce el riesgo de accidentes al iluminar automáticamente los escalones cuando detecta movimiento.</li>
+            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></span>Eficiencia energética: Las luces solo se encienden cuando es necesario, evitando desperdicio de energía.</li>
+            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-orange-500 rounded-full inline-block mr-2"></span>Innovación y confort: Transforma cualquier espacio en un entorno inteligente y moderno.</li>
+            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-pink-500 rounded-full inline-block mr-2"></span>Escalabilidad: Puede integrarse con otros dispositivos IoT y sistemas domóticos.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="mt-20 px-8 sm:px-16 lg:px-32">
+    <h2 class="text-2xl font-bold inline-block px-8 py-3 shadow-lg bg-black gradient-border ml-auto mr-10">
+        Tecnologías Utilizadas
+    </h2>
+    <div class="mt-6 max-w-3xl ml-auto mr-0">
+        <p class="text-gray-300 text-lg leading-relaxed text-left">
+            Para desarrollar un sistema eficiente y escalable, utilizamos herramientas modernas en hardware y software:
+        </p>
+        <ul class="mt-4 text-gray-300 text-lg leading-relaxed list-disc pl-5">
+            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></span>Backend: Django para gestionar la lógica del sistema y la comunicación con la base de datos.</li>
+            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></span>Frontend: Tailwind CSS y Django Templates para una interfaz web intuitiva y moderna.</li>
+            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-orange-500 rounded-full inline-block mr-2"></span>Base de datos: Firebase para almacenar datos de configuración y uso del sistema.</li>
+            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-pink-500 rounded-full inline-block mr-2"></span>Microcontrolador: ESP32 para la gestión de sensores y luces LED.</li>
+            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-green-500 rounded-full inline-block mr-2"></span>Sensores: Sensores de movimiento para detectar la presencia de personas en la escalera.</li>
+            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-pink-500 rounded-full inline-block mr-2"></span>Aplicación móvil: Flutter para permitir el control remoto del sistema.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="mt-20 px-8 sm:px-16 lg:px-32">
+    <h2 class="text-2xl font-bold inline-block px-8 py-3 shadow-lg bg-black gradient-border">
+        Nuestro Enfoque
+    </h2>
+    <div class="mt-6 max-w-3xl ml-auto mr-0">
+        <p class="text-gray-300 text-lg leading-relaxed text-left">
+            Nos diferenciamos por nuestra visión de crear un producto que no solo sea funcional, sino también adaptable
+        </p>
+        <ul class="mt-4 text-gray-300 text-lg leading-relaxed list-disc pl-5">
+            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></span>Experiencia de usuario optimizada: Interfaz intuitiva y configuración sencilla a través de la app.</li>
+            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></span>Estrategia de ahorro energético: Algoritmos inteligentes que optimizan el encendido y apagado.</li>
+            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-orange-500 rounded-full inline-block mr-2"></span>Flexibilidad y personalización: Ajuste de intensidad, colores y patrones de iluminación</li>
+        </ul>
+    </div>
+</section>
+<br><br><br><br><br>
 
     <footer class="footer footer-center  bg-gradient-to-t from-blue-200 to-pink-200 text-primary-content p-10">
         <aside>
