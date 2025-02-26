@@ -1,0 +1,24 @@
+.mainClose {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    transform: translate(50%, -50%);
+}
+.mainClose:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.mainBoxes {
+    width: 100%; /* o cualquier valor más grande */
+    height: auto;
+    position: relative;
+    overflow: visible;
+}

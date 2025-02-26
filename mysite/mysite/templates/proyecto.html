@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="{% static 'styles/style.css' %}"> -->
     <link rel="stylesheet" href="{% static 'styles/output.css' %}">
     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'styles/proyect.css' %}">
     <style>
     </style>
 </head>
@@ -98,75 +102,293 @@
                 Inicio
             </button>
         </div>
-    </div>
+    </div> <br><br>
+        <style>
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+                100% { transform: scale(1); }
+            }
+            .pulse-text {
+                display: inline-block;
+                animation: pulse 1.2s infinite ease-in-out;
+            }
 
-    <body class="bg-black text-white">
-    <style>
-        .gradient-bg {
-            background: linear-gradient(45deg, #6a1b9a, #8e24aa, #d81b60);
-        }
-    </style>
-</head>
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+    .pulse-text {
+        display: inline-block;
+        animation: pulse 1.2s infinite ease-in-out;
+    }
+
+    .custom-bg {
+        background-image: url('{% static "img/descarga1.gif" %}');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        padding-left: 20px;
+        padding-top: 20px; /* Aumenté el padding-top para bajar el texto */
+        padding-right: 70px;
+        padding-bottom: 20px;
+        align-items: center;
+        border-radius: 1rem;
+    }
+
+    .info-section {
+        background: linear-gradient(45deg, #61158a57, #e3c20431);
+        padding: 2rem;
+        border-radius: 1rem;
+        width: 55%;
+        box-shadow: none; /* Elimina el borde y la sombra */
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 30px;
+        margin: 0 auto;
+        max-width: 1400px; /* Añadido límite para el ancho */
+    }
+
+    .flex-container > div {
+        flex: 1;
+    }
+
+    .flex-container > .gif-container {
+        flex: 0.5; /* Ajustado para que el gif sea un poco más grande */
+        border: none; /* Elimina el borde */
+        border-radius: 1rem;
+    }
+
+    .text-gray-300 {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Añadir padding global */
+    body {
+        padding: 0 10px; /* Aumenté el padding en los lados */
+        margin: 0;
+    }
+
+    /* Asegurando que no quede pegado al borde */
+    .grid {
+        padding: 20px; /* Añadido espacio adicional entre la cuadrícula y los bordes */
+    }
+
+    /* Agregar márgenes a la sección */
+    .custom-bg, .info-section {
+        margin: 0 auto; /* Centramos y agregamos espacio alrededor */
+    }
+</style>
+<h1 class="text-5xl font-bold text-center mt-2 tracking-widest">¡Comencemos!</h1></span></h1><br><br>
+
+
 <body class="gradient-bg min-h-screen flex flex-col justify-center items-center text-center text-white">
-    <div class="p-6 space-y-10">
-        <!-- Título -->
-        <div class="text-center p-8 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500">
-            <h1 class="text-4xl font-bold">¿Qué es <span class="text-white">Light</span></h1>
-            <h1 class="text-5xl font-bold text-white">STEP?</h1>
+    <div class="flex-container">
+        <div class="gif-container text-left p-8 rounded-3xl custom-bg">
+            <h1 class="text-4xl font-bold pulse-text">¿Qué es</h1><br>
+            <h1 class="text-7xl font-bold pulse-text">Light</h1><br>
+            <h1 class="text-7xl font-bold text-white pulse-text">STEP?</h1><br>
         </div>
 
-        <!-- Sección de información -->
-        <div class="bg-gray-900 p-6 rounded-xl">
+        <div class="info-section">
+            <p class="text-gray-300 text-lg leading-relaxed text-left">
+                LightStep es un sistema de iluminación inteligente que mejora la seguridad, eficiencia energética y comodidad en diversos entornos. Con LightStep puedes:
+            </p><br>
             <div class="flex gap-4">
-                <div class="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl"></div>
                 <div class="space-y-2">
-                    <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></span>Lorem ipsum dolor sit amet.</p>
-                    <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></span>Lorem ipsum dolor sit amet.</p>
-                    <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-green-500 rounded-full inline-block mr-2"></span>Lorem ipsum dolor sit amet.</p>
+                    <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></span>Cambiar el color de las luces a tu gusto.</p>
+                    <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></span>Elegir efectos visuales (estático, radial, arcoíris).</p>
+                    <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-orange-500 rounded-full inline-block mr-2"></span>Ver estadísticas sobre el tiempo de uso del sistema.</p>
+                    <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-pink-500 rounded-full inline-block mr-2"></span>Programar el tiempo en que el sistema se apague o encienda.</p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Iconos -->
-        <div class="flex justify-center gap-10">
-            <div class="w-20 h-20 border-2 border-purple-500 rounded-full flex items-center justify-center">
-                <span class="text-4xl">🚶</span>
-            </div>
-            <div class="w-20 h-20 border-2 border-blue-500 rounded-full flex items-center justify-center">
-                <span class="text-4xl">🧑‍🏫</span>
-            </div>
-            <div class="w-20 h-20 border-2 border-pink-500 rounded-full flex items-center justify-center">
-                <span class="text-4xl">🔺</span>
-            </div>
+    <div id="gallery-container" ></div>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Crear la escena
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 1, 100);
+            const renderer = new THREE.WebGLRenderer();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById("gallery-container").appendChild(renderer.domElement);
+
+            // Crear un carrusel circular de imágenes
+            const textureLoader = new THREE.TextureLoader();
+            const radius = 7;
+            const imagePaths = [
+                "{% static 'img/escaleras1.jpg' %}",
+                "{% static 'img/escaleras2.jpg' %}",
+                "{% static 'img/pasillo2.jpg' %}",
+                "{% static 'img/pasillo3.jpg' %}",
+                "{% static 'img/pasillo1.jpg' %}",
+                "{% static 'img/escaleras3.jpg' %}",
+                "{% static 'img/pasillos4.jpg' %}",
+                "{% static 'img/escaleras4.jpg' %}"
+            ];
+            
+            const images = [];
+            imagePaths.forEach((path, index) => {
+                const texture = textureLoader.load(path);
+                const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+                const geometry = new THREE.PlaneGeometry(4, 3);
+                const mesh = new THREE.Mesh(geometry, material);
+                
+                const angle = (index / imagePaths.length) * Math.PI * 2;
+                mesh.position.set(Math.cos(angle) * radius, 0, Math.sin(angle) * radius);
+                mesh.lookAt(new THREE.Vector3(0, 0, 0));
+                
+                scene.add(mesh);
+                images.push(mesh);
+            });
+        
+            camera.position.z = 3;
+            
+            // Animación de rotación
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                // Rotación continua
+                scene.rotation.y += 0.003;
+                
+                renderer.render(scene, camera);
+            }
+            
+            animate();
+        });
+        </script>
+</body><br><br><br>
+
+<!-- Quiero que aquí vaya una galería de imágenes -->
+
+<style>
+    .grid {
+        padding: 0 30px; /* Espacio adicional a los lados del contenedor */
+    }
+
+    .grid-cols-2 {
+        max-width: 1300px; /* Limitar el ancho máximo para que no ocupe toda la pantalla */
+        margin: 0 auto; /* Centrar el contenedor */
+    }
+
+    .p-30 {
+        padding: 30px;
+    }
+
+    .p-7 {
+        padding: 3rem; /* Aumentar padding interno */
+    }
+
+    .p-6 {
+        padding: 2rem; /* Aumentar padding interno */
+    }
+
+    /* Asegura que los elementos dentro de la cuadrícula tengan espacio */
+    .gap-24 {
+        gap: 24px; /* Espacio entre columnas */
+    }
+</style>
+
+
+<body class="gradient-bg min-h-screen flex flex-col justify-center items-center text-center text-white">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 p-10 w-full max-w-5xl">
+        <div class="p-10 rounded-3xl shadow-2xl border-transparent transition-all duration-300 hover:border-yellow-400 hover:shadow-yellow-400/50 bg-gradient-to-r from-orange-500 to-red-500 transform hover:scale-105 opacity-0" id="objetivo-general">
+            <h3 class="font-extrabold text-3xl mb-6 text-white drop-shadow-lg tracking-wide">Objetivo General</h3>
+            <p class="text-white text-lg leading-relaxed">
+                Desarrollar un sistema de iluminación inteligente, adaptable a escaleras, pasillos y diferentes espacios, que mejore la seguridad, optimice el consumo energético y brinde personalización mediante una aplicación móvil y plataforma web.
+            </p>
         </div>
 
-        <!-- Objetivo -->
-        <div class="text-center p-8 rounded-2xl bg-gradient-to-r from-purple-900 to-yellow-900">
-            <h2 class="text-3xl font-bold">El objetivo de</h2>
-            <h2 class="text-4xl font-bold text-white">Light STEP</h2>
-        </div>
-
-        <!-- Objetivos -->
-        <div class="grid grid-cols-2 gap-4">
-            <div class="p-6 bg-gradient-to-r from-red-500 to-orange-500 rounded-xl text-center">
-                <h3 class="font-bold">Objetivo General</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="p-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-center">
-                <h3 class="font-bold">Objetivo Específico</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </div>
-
-        <!-- Lista numerada -->
-        <div class="space-y-4">
-            <p class="flex items-center"><span class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center mr-4">01</span>Lorem ipsum dolor sit amet.</p>
-            <p class="flex items-center"><span class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center mr-4">02</span>Lorem ipsum dolor sit amet.</p>
-            <p class="flex items-center"><span class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center mr-4">03</span>Lorem ipsum dolor sit amet.</p>
+        <!-- Objetivos Específicos -->
+        <div class="p-10 rounded-3xl shadow-2xl border-transparent transition-all duration-300 hover:border-purple-400 hover:shadow-purple-400/50 bg-gradient-to-r from-purple-500 to-pink-500 transform hover:scale-105 opacity-0" id="objetivo-especifico">
+            <h3 class="font-extrabold text-3xl mb-6 text-white drop-shadow-lg tracking-wide "> Objetivos Específicos</h3>
+            <ul class="text-lg leading-relaxed text-left space-y-4">
+                <li class="flex items-center">
+                    <span class="w-8 h-8 bg-white text-purple-600 font-bold rounded-full flex items-center justify-center mr-4">1</span>
+                    Implementar sensores para detectar la presencia de personas y activar las luces automáticamente.
+                </li>
+                <li class="flex items-center">
+                    <span class="w-8 h-8 bg-white text-purple-600 font-bold rounded-full flex items-center justify-center mr-4">2</span>
+                    Crear una aplicación móvil que permita al usuario personalizar el sistema.
+                </li>
+                <li class="flex items-center">
+                    <span class="w-8 h-8 bg-white text-purple-600 font-bold rounded-full flex items-center justify-center mr-4">3</span>
+                    Diseñar una página web para visualizar las características del sistema.
+                </li>
+            </ul>
         </div>
     </div>
+
+    <!-- Script para animaciones con GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        gsap.to("#objetivo-general", { opacity: 1, y: -20, duration: 1, delay: 0.3, ease: "power3.out" });
+        gsap.to("#objetivo-especifico", { opacity: 1, y: -20, duration: 1, delay: 0.6, ease: "power3.out" });
+    </script>
+
+    <!-- Estilo Extra para Glow Effect -->
+    <style>
+        .glow-effect {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 165, 0, 0.7);
+        }
+    </style>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>
+
+
+
+        <!-- Lista numerada -->
+        <div class="space-y-6">
+            <p class="flex items-center bg-gray-900 p-4 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                <span class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-full flex items-center justify-center mr-4 shadow-md">
+                    01
+                </span>
+                <span class="text-white font-medium">
+                    <strong class="text-blue-400">Diseño Moderno y Estético</strong> – La integración de luces LED y el control por aplicación hacen que el sistema se vea elegante y futurista en cualquier espacio.
+                </span>
+            </p>
+            <p class="flex items-center bg-gray-900 p-4 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                <span class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-full flex items-center justify-center mr-4 shadow-md">
+                    02
+                </span>
+                <span class="text-white font-medium">
+                    <strong class="text-blue-400">Automatización Inteligente</strong> – Gracias al uso de sensores de movimiento y control a distancia, el sistema opera sin necesidad de interacción manual constante.
+                </span>
+            </p>
+            <p class="flex items-center bg-gray-900 p-4 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                <span class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-full flex items-center justify-center mr-4 shadow-md">
+                    03
+                </span>
+                <span class="text-white font-medium">
+                    <strong class="text-blue-400">Seguridad Mejorada</strong> – Al detectar movimiento y encender las luces automáticamente, reduce el riesgo de accidentes en escaleras y pasillos oscuros.
+                </span>
+            </p>
+        </div><br><br><br>
+        
 </body>
 </html>
+
 
     <footer class="footer footer-center  bg-gradient-to-t from-blue-200 to-pink-200 text-primary-content p-10">
         <aside>
@@ -217,5 +439,89 @@
         </nav>
     </footer>
 </div>
+
 </body>
 </html>
+
+
+
+
+
+
+
+  <!-- Quiero que aquí vaya una galería de imágenes -->
+        <!-- <div id="gallery-container" ></div>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Crear la escena
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 1, 100);
+            const renderer = new THREE.WebGLRenderer();
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById("gallery-container").appendChild(renderer.domElement);
+            
+            // Crear un carrusel circular de imágenes
+            const textureLoader = new THREE.TextureLoader();
+            const radius = 3;
+            const imagePaths = [
+                "{% static 'img/escaleras1.jpg' %}",
+                "{% static 'img/escaleras2.jpg' %}",
+                "{% static 'img/pasillo2.jpg' %}",
+                "{% static 'img/pasillo3.jpg' %}",
+                "{% static 'img/pasillo1.jpg' %}"
+            ];
+            
+            const images = [];
+            imagePaths.forEach((path, index) => {
+                const texture = textureLoader.load(path);
+                const material = new THREE.MeshBasicMaterial({ map: texture, side: THREE.DoubleSide });
+                const geometry = new THREE.PlaneGeometry(3, 2);
+                const mesh = new THREE.Mesh(geometry, material);
+                
+                const angle = (index / imagePaths.length) * Math.PI * 2;
+                mesh.position.set(Math.cos(angle) * radius, 0, Math.sin(angle) * radius);
+                mesh.lookAt(new THREE.Vector3(0, 0, 0));
+                
+                scene.add(mesh);
+                images.push(mesh);
+            });
+        
+            camera.position.z = 7;
+            
+            // Animación de rotación
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                // Rotación continua
+                scene.rotation.y += 0.003;
+                
+                renderer.render(scene, camera);
+            }
+            
+            animate();
+        });
+        </script> -->
+
+
+
+
+        <!-- <style>
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+                100% { transform: scale(1); }
+            }
+            .pulse-text {
+                display: inline-block;
+                animation: pulse 1.2s infinite ease-in-out;
+            }
+            </style>
+            <body class="gradient-bg min-h-screen flex flex-col justify-center items-center text-center text-white">
+                <div class="text-left p-8 rounded-2xl bg-gradient-to-r from-purple-900 to-yellow-900">
+                <h1 class="text-4xl font-bold pulse-text">El objetivo de</h1><br>
+                <h1 class="text-6xl font-bold pulse-text">Light</h1><br>
+                <h1 class="text-7xl font-bold text-white pulse-text">STEP</h1><br>
+            </div> -->
+        
