@@ -1,7 +1,361 @@
+
 {% extends "base.html" %}
 
 {% block title %} Contacto {% endblock %}
 
 {% block content %}
-<p>Resultado exitoso 3</p>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<style>
+   body {
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+.contact-form {
+    width: 60%;
+    background: black;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.contact-title {
+    font-size: 24px;
+    padding: 10px;
+    background: linear-gradient(45deg, #FF00FF, #800080);
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group input,
+textarea {
+    width: 48%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
+/* Botón con borde degradado */
+.button-gradient {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: black;
+    border-radius: 50px;
+    border: 3px solid transparent;
+    background-image: linear-gradient(black, black), linear-gradient(90deg, #ff0080, #8000ff);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.6);
+}
+
+.button-gradient:hover {
+    color: #ff00ff;
+    background-image: linear-gradient(black, black), linear-gradient(90deg, #8000ff, #ff0080);
+    box-shadow: 0 0 20px rgba(128, 0, 255, 0.7);
+}
+
+/* Nuevo: Gradient Border mejorado solo alrededor */
+.gradient-border {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 9999px;
+    font-weight: bold;
+    font-size: 1.875rem;
+    color: white;
+    background: linear-gradient(black, black) padding-box, linear-gradient(90deg, #ff0080, #8000ff) border-box;
+    border: 4px solid transparent;
+    position: relative;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: capitalize; /* Primera letra en mayúscula, resto en minúscula */
+    letter-spacing: 2px;
+    color: #ff00ff;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(255, 0, 128, 0.7);
+}
+
+/* Iconos sociales */
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+/* Botón con borde gradiente */
+.gradient-button {
+    position: relative;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 12px 32px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.gradient-button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(90deg, #ff00ff, #ffcc00);
+    z-index: -1;
+}
+
+.gradient-button:hover {
+    color: #ffcc00;
+}
+
+/* Estilo del contenedor */
+.container {
+    text-align: center;
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, #3a0b58, #5e1650); /* Tonos más vibrantes */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    height: 500px; /* Aumenta la altura */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+
+    /* Mover a la derecha */
+    margin-left: auto;
+    margin-right: 50px; /* Ajusta según lo necesites */
+}
+
+/* Estilo del título */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Estilo del correo */
+.email {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre icono y texto */
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease;
+}
+
+/* Estilo del icono */
+.email i {
+    font-size: 1.4rem;
+    color: #ffcc00;
+}
+
+/* Efecto hover */
+.email:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsividad */
+@media screen and (max-width: 1024px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .contact-form {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .input-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-group input,
+    textarea {
+        width: 100%;
+    }
+
+    .container {
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .contact-title {
+        font-size: 20px;
+        padding: 8px;
+    }
+
+    .button-gradient,
+    .gradient-button {
+        font-size: 1.2rem;
+        padding: 10px 24px;
+    }
+
+    .container {
+        width: 100%;
+        height: auto;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .email {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .footer {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-container {
+        padding: 10px;
+    }
+
+    .contact-title {
+        font-size: 18px;
+        padding: 6px;
+    }
+
+    .button-gradient,
+    .gradient-button {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 20px;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .email {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .footer {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+</style>
+
+{% if messages %}
+        <div id="success-message" class="alert alert-success">
+            {% for message in messages %}
+                <p class="text-xl text-center ">{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+<div class="contact-container">
+    <div class="contact-form">
+        <h2  class="text-3xl font-bold inline-block px-8 py-3 shadow-lg bg-black gradient-border">Escríbenos</h2>
+        <form method="POST" action="{% url 'contacto' %}">
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="text" placeholder="Nombre" name="nombre">
+                <input type="text" placeholder="Apellido" name="apellido">
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Número de teléfono" name="telefono" pattern="[0-9]*" inputmode="numeric">
+                <input type="email" placeholder="Correo" name="correo" required>
+            </div>
+            <textarea placeholder="Mensaje" name="mensaje"></textarea>
+        
+            <button class="relative text-white px-6 py-3 rounded-lg border-2 border-transparent font-semibold transition-all duration-300 group">
+                <span class="relative z-10">Enviar</span>
+                <span class="absolute inset-0 rounded-lg border-2 border-transparent bg-gradient-to-br from-purple-500 to-pink-500 group-hover:border-transparent group-hover:bg-clip-border group-hover:border-2 group-hover:border-transparent"></span>
+            </button>
+        </form>
+
+    </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <div class="container">
+        <h1>Información de<br>contacto <br> 
+            <i class="bi bi-envelope"></i> lightstepkeel@gmail.com
+          </h1>
+
+    </div>
+</div>
+<br><br><br><br><br>
+
+    
+    <script>
+        // Verifica si hay un mensaje de éxito
+        window.onload = function() {
+            var successMessage = document.getElementById('success-message');
+            if (successMessage) {
+                // Establece un temporizador para ocultar el mensaje después de 2 segundos (2000 milisegundos)
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                }, 2000);
+            }
+        }
+    </script>
+
 {% endblock %}

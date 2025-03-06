@@ -1,7 +1,364 @@
 {% extends "base.html" %}
 
-{% block title %} Sobre Nosotros {% endblock %}
+{% block title %}Sobre Nosotros{% endblock %}
 
 {% block content %}
-<p>Resultado exitoso 2</p>
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    .container {
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .gradient-line {
+        width: 900px;
+        height: 4px;
+        background: linear-gradient(90deg, #ff0080, #8000ff);
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .tex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tex h3 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .team {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .team {
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    .member {
+        width: 200px;
+        height: 300px;
+        perspective: 1000px;
+        position: relative;
+    }
+
+    .member img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s;
+        border-radius: 10px;
+    }
+
+    .member:hover img {
+        transform: rotateY(180deg);
+    }
+
+    .member-info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.member {
+    width: 180px;  /* Tamaño base más grande */
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid #fb00ff;
+    background-image: 
+        linear-gradient(black, black), 
+        linear-gradient(90deg, #8000ff, #ff0080);
+    background-size: 100%, 100%;
+    background-position: center;
+    background-blend-mode: multiply;
+    position: relative;
+    overflow: hidden; /* Evita que el texto se salga */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.member img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover; /* Ajusta la imagen al círculo */
+}
+
+.member-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px; /* Aumentado para mejor legibilidad */
+    color: white;
+    background: rgba(0, 0, 0, 0.7); /* Fondo más oscuro para mejor contraste */
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease-in-out;
+    padding: 15px; /* Más espacio para el texto */
+    box-sizing: border-box;
+}
+
+.member:hover .member-info {
+    opacity: 1; /* Muestra la información al pasar el mouse */
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Dispositivos pequeños (móviles) */
+@media (max-width: 600px) {
+    .member {
+        width: 120px; /* Reducimos tamaño en pantallas pequeñas */
+        height: 120px;
+    }
+    .member-info {
+        font-size: 12px; /* Texto más pequeño */
+        padding: 5px;
+    }
+}
+
+/* Dispositivos medianos (tabletas) */
+@media (max-width: 900px) {
+    .member {
+        width: 150px;
+        height: 150px;
+    }
+    .member-info {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+
+    .title {
+        /* font-size: 20px;
+        border: 2px solid #ff00ff;*/
+        display: inline-block;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 20px 0;
+    }
+
+    .contact-section {
+        background-color: white;
+        color: black;
+        padding: 15px;
+        margin-top: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .button-gradient {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        background: black;
+        border-radius: 50px;
+        border: 3px solid transparent;
+        background-image: linear-gradient(black, black), linear-gradient(90deg, #ff0080, #8000ff);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+        text-decoration: none;
+        box-shadow: 0 0 15px rgba(255, 0, 128, 0.6);
+    }
+
+    .button-gradient:hover {
+        color: #ff00ff;
+        background-image: linear-gradient(black, black), linear-gradient(90deg, #8000ff, #ff0080);
+        box-shadow: 0 0 20px rgba(128, 0, 255, 0.7);
+    }
+
+    .gradient-border {
+        display: inline-block;
+        padding: 12px 32px;
+        border-radius: 9999px;
+        font-weight: bold;
+        font-size: 1.875rem;
+        color: white;
+        background: linear-gradient(black, black) padding-box, linear-gradient(90deg, #ff0080, #8000ff) border-box;
+        border: 4px solid transparent;
+        position: relative;
+    }
+
+    section {
+        margin: 60px auto;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    section:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        padding: 10px 20px;
+        background-color: #000;
+        border-radius: 10px;
+        display: inline-block;
+        border: 3px solid transparent;
+        background-image: linear-gradient(#000, #000), linear-gradient(90deg, #ff00ff, #00ffff);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+    }
+
+    p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    text-align: justify;
+}
+
+    @media (max-width: 768px) {
+        section {
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+
+        .team {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .member {
+            width: 150px;
+            height: 150px;
+        }
+
+        .title {
+            font-size: 16px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        .button-gradient {
+            font-size: 16px;
+            padding: 8px 16px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gradient-line {
+            width: 100%;
+        }
+
+        .team {
+            gap: 15px;
+        }
+
+        .member {
+            width: 120px;
+            height: 120px;
+        }
+
+        .button-gradient {
+            font-size: 14px;
+            padding: 6px 12px;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+        }
+    }
+</style>
+
+
+<div class="container">
+    <section class="tex">
+        <div class="gradient-line"></div>
+        <h3>EL EQUIPO</h3>
+        <div class="team">
+            <div class="member">
+                <img src="" alt="Imagen 1">
+                <div class="member-info">
+                    <p>Nombre:Maria Evelyn Sebastian Silverio<br>
+                        Rol:Project Manager
+                    </p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="" alt="Imagen 2">
+                <div class="member-info">
+                    <p>Nombre:Esmeralda Muñoz Padilla<br>
+                    Rol:Backend </p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="" alt="Imagen 3">
+                <div class="member-info">
+                    <p>Nombre:Kevin Arroyo López<br> 
+                    Rol:Fronted</p>
+                </div>
+            </div>
+            <div class="member">
+                <img src="" alt="Imagen 4">
+                <div class="member-info">
+                    <p>Nombre:Larisa Piña Cortez <br>
+                    Rol:Tester</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center mt-20">
+        <h2 class="text-3xl font-bold inline-block px-8 py-3 shadow-lg bg-black gradient-border">¿Quiénes somos?</h2>
+        <p>En KEEL, diseñamos sistemas de iluminación inteligente para escaleras, combinando tecnología avanzada y diseño innovador.
+            Ofrecemos luces sincronizadas con el movimiento, sensores
+            inteligentes, control móvil y efectos personalizables, mejorando la seguridad y la experiencia visual. ¡Transformamos tus escaleras!🌟</p>
+    </section>
+
+    <section class="text-center mt-20">
+        <h2 class="text-3xl font-bold inline-block px-8 py-3 shadow-lg bg-black gradient-border">Nuestra misión</h2>
+        <p>"Desarrollar un sistema de iluminación dinámico e interactivo para escaleras y pasillos, utilizando sensores y tecnología avanzada para ofrecer una experiencia de usuario única y segura. El sistema debe adaptarse al movimiento de las personas, 
+            proporcionando una iluminación eficiente que mejore la visibilidad y aporte, especialmente durante la noche. Además,
+            permitirá al usuario personalizar la iluminación, optimizando tanto la funcionalidad como el diseño del espacio." </p>
+    </section>
+</div>
 {% endblock %}

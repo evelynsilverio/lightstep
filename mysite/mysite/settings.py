@@ -120,11 +120,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
-    # BASE_DIR / "mysite" / "static",
+    # BASE_DIR / "mysite" / "static", 
     # BASE_DIR / "static",
     # BASE_DIR / "theme/static",
     # BASE_DIR / "mysite"/"static",
-    # BASE_DIR / "static",
+    # BASE_DIR / "static", 
     BASE_DIR / "mysite" / "static",
 ]
 
@@ -138,3 +138,10 @@ TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'lightstepkeel@gmail.com'  # Tu correo de Gmail
+EMAIL_HOST_PASSWORD = 'yxkz eehn xmli oksf'  # La contraseña de la aplicación

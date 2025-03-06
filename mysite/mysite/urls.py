@@ -19,16 +19,19 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import gallery
+
+
 
 urlpatterns = [
-    path("gallery/", gallery, name="gallery"),
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('base', views.base),
-    path('acerca/', views.acerca, name='acerca_proyecto'),
-    path('proyecto/', views.proyecto, name='proyecto'),
-    path('contacto/', views.contacto),
+    path('AcercaDelProyecto', views.acerca, name='acerca'),
+    path('contacto/', views.contacto , name='contacto'),
+    path('proyecto', views.proyecto, name='proyecto'),
+    path('costos/', views.costos, name='costos'),   
+    path('funcionamiento/', views.funcionamiento, name='funcionamiento'),
+    path('SobreNosotros', views.nosotros, name='nosotros'),
 ]
 
 if settings.DEBUG:

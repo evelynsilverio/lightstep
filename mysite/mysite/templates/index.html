@@ -1,26 +1,428 @@
 {% extends "base.html" %}
+<!-- Incluye GSAP y ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 {% block title %} Inicio {% endblock %}
+{% block extra_css %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #000;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 200vh;
+    }
 
-{% block content %}
-<!-- <p>Resultado exitoso 0</p>  Aquí es donde aparece el contenido principal de esta página -->
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+        gap: 5px; 
+        margin-top: 100px;
+    }
+
+    .row {
+        display: flex;
+        gap: 5px;
+        border-bottom: 0.001px solid #fff;
+    }
+
+    .box {
+        width: 8px;
+        height: 8px;
+        background: #ffffff;
+        opacity: 0; 
+        box-shadow: 5px 5px 170px 5px #fff6f4, 5px 5px 100px 5px #fff6f4 ;
+        border-radius: 50%;
+    }
+
+    .inactive {
+        background: transparent !important; /* Desactiva los cuadros internos */
+    }
+
+    #seccion2 {
+        /* width: 100vw; */
+        height: 100vh;
+    }
+
+    .images {
+  padding-top: 8vh;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: flex-start;
+  align-items: center;
+  gap: 40px;
+  z-index: 1;
+}
+
+/* 🔹 Imágenes */
+.image-container {
+  width: 200px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Tarjetas */
+.card {
+  width: 200px;
+  height: 400px; 
+  padding: 20px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: transform 0.3s ease-out;
+  /* background: #d20000; */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+/* 🔹 Desplazamiento alterno de elementos */
+.offset-up {
+  transform: translateY(-50px);
+}
+
+.offset-down {
+  transform: translateY(50px);
+}
+
+/* 🌟 Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .offset-up, .offset-down {
+    transform: translateY(0); /* Sin desplazamiento en móviles */
+  }
+}
+
+.oval {
+    width: 200px;
+    height: 350px;
+    border-radius: 90px;
+    /* background: linear-gradient(to right, #ff4500, #d336e0, #8b2cdf); */
+    background: linear-gradient(45deg, #a855f7, #ec4899);
+
+
+    position: absolute;
+    z-index: -1;
+}
+
+.left {
+    transform: rotate(-30deg);
+}
+
+.right {
+    transform: rotate(30deg);
+}
+.card{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+body {
+    overflow-x: hidden;
+  }
+
+  .images {
+    flex-direction: column; 
+    gap: 50px;  /* reducir el espacio entre elementos */
+  }
+
+.image-container {
+    width: 50%;    
+    max-width: 50%;
+    height: 100px; 
+  }
+
+  .card {
+    width: 50%;  
+    max-width: 200px;
+    height: 80px;    
+    font-size: 12px; 
+    padding: 10px;    
+    text-align: center;
+  }
+
+  /* Ajuste para los elementos desplazados en móvil */
+  .offset-up, .offset-down {
+    transform: translateY(0);  
+  }
+  .oval {
+    width: 100%;
+    height: 100px;
+  }
+
+  .descargar {
+    font-size: 1rem !important;  
+  }
+
+  .fa-download {
+    font-size: 3rem !important;  
+  }
+}
+
+
+#canvas {
+    position: absolute;
+    top: 402px; 
+    left: 1150px; 
+    width: 150px;  
+    height: 150px; 
+}
+
+</style>
 {% endblock %}
 
-<!-- {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Proyecto Django</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-</head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <header class="text-blue-600 text-4xl">¡Hola, Tailwind!</header>
-    <button class="btn btn-primary mt-4">Botón DaisyUI</button>
-</body>
-</html> -->
+
+{% block content %}
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-5 md:px-10 pb-52 seccion">
+    <div class="text-center p-10 md:p-20 lg:p-32">
+        <h3 class="text-2xl font-semibold p-2">¡Conócenos!</h3>
+        <h2 class="text-6xl font-bold p-5">Light</h2>
+        <h1 class="text-8xl font-extrabold pb-10">Step</h1>
+        <button class="btn btn-outline bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white border-0 hover:from-purple-600 hover:to-orange-400 mt-4" onclick="scrollToSection()">¡Entra Ya!</button>
+    </div>
+    <div class="relative p-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg">
+        <div class="flex flex-col items-center gap-4 mt-5 bg-black p-6 rounded-lg">
+            <label for="colorPicker" class="text-white font-semibold text-sm">Elige un color:</label>
+            <input type="color" id="colorPicker" class="w-10 h-10 border-2 border-white rounded-full">
+            <button id="rainbowEffect" class="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white border-0 hover:from-purple-600 hover:to-orange-400 mt-4" text-white rounded-lg">
+                Arcoíris
+            </button>
+        </div>    
+    </div>
+    
+    <div id="container" class="w-full md:w-1/2 h-40 pl-5 md:pl-10 lg:pl-28 "></div>
+    <canvas id="canvas" class="hidden md:block"></canvas>
+</div>
 
 
+<div class="flex w-full flex-col">
+    <div class="bg-base-300 grid h-12 place-items-center bg-gradient-to-r from-purple-700 via-pink-600 text-purple-50 -mt-32"></div>
+  </div>
+  <div id="wrapper">
+      <div id="content">
+          <div id="seccion2" class="seccion">
+              <br>
+            <div class="flex w-full flex-col justify-center items-center">
+                <div class="relative w-80 h-28 p-1 bg-black aplication">
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-700 via-pink-600 to-red-500 rounded-xl p-1"></div>
+                    <div class="relative flex items-center justify-center h-full bg-black rounded-xl text-white text-3xl font-bold">
+                      Aplicación
+                    </div>
+                </div>
+                
+                <div class="images -mt-24">
+                    <div class="image-container offset-up">
+                        <img src="../static/img/stairs.jpg" alt="Imagen 3">
+                    </div>
+                    <div class="card offset-down flex flex-col items-center justify-center gap-4">
+                        <h3 class="text-white text-3xl font-bold descargar">Descargar</h3>
+                    
+                        <!-- Botón con icono -->
+                        <button class="flex items-center justify-center bg-neutral-content text-white p-3 rounded-lg">
+                            <i class="fas fa-download text-white text-6xl"></i>
+                        </button>
+                        <div class="oval left"></div>
+                        <div class="oval right"></div>
+                    </div>
+                    <div class="image-container offset-up">
+                        <img src="../static/img/escaleras.jpg" alt="Imagen 1">
+                    </div>
+                    <div class="card offset-down">
+                        <p>Aplicación Móvil intuitiva para tener control sobre la iluminación de tu hogar</p>
+                        <div class="oval left"></div>
+                        <div class="oval right"></div>
+                    </div>
+                    <div class="image-container offset-up">
+                        <img src="../static/img/ledazul.jpeg.jpeg" alt="Imagen 2">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("container");
+        const colorPicker = document.getElementById("colorPicker");
+        const rainbowButton = document.getElementById("rainbowEffect");
+        const filas = 15; 
+        const columnas = 10; 
+        let colores = ["#ffffff", "#00ff00", "#ff0000", "#82f8f3", "#ff00ff", "#ffff00", "#4513ee"]; 
+
+        // Crear las filas y columnas con efecto escalera
+        for (let i = 0; i < filas; i++) {
+            let row = document.createElement("div");
+            row.classList.add("row");
+            row.style.marginLeft = `${i * 15}px`;
+
+            for (let j = 0; j < columnas; j++) {
+                let div = document.createElement("div");
+                div.classList.add("box");
+
+                if (j !== 0 && j !== columnas - 1) {
+                    div.classList.add("inactive");
+                }
+
+                row.appendChild(div);
+            }
+            container.appendChild(row);
+        }
+
+        // Animación con GSAP
+        gsap.to(".box:not(.inactive)", {
+            opacity: 1,
+            duration: 2,
+            stagger: {
+                each: 0.4,
+                from: "start"
+            },
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: "#container",
+                start: "top 80%",
+                toggleActions: "play none none none"
+            }
+        });
+
+        // Función para asignar colores en escalera
+        function aplicarColores() {
+            document.querySelectorAll(".row").forEach((row, index) => {
+                let colorIndex = Math.floor(index / 2) % colores.length; // Cambia cada dos filas
+                let colorActual = colores[colorIndex];
+
+                row.querySelectorAll(".box:not(.inactive)").forEach(box => {
+                    box.style.backgroundColor = colorActual;
+                    box.style.boxShadow = `10px 10px 100px 15px ${colorActual}`;
+                });
+            });
+        }
+
+        // Evento para personalizar color
+        colorPicker.addEventListener("input", function () {
+            let selectedColor = colorPicker.value;
+            document.querySelectorAll(".box:not(.inactive)").forEach(box => {
+                box.style.backgroundColor = selectedColor;
+                box.style.boxShadow = `10px 10px 100px 15px ${selectedColor}`;
+            });
+        });
+
+        // Evento para activar el efecto arcoíris
+        rainbowButton.addEventListener("click", aplicarColores);
+
+        // Aplicar colores iniciales en escalera
+        aplicarColores();
+
+    });
+    
+
+    document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Aplica el efecto parallax a imágenes y tarjetas de texto
+    gsap.utils.toArray(".images .card, .images .image-container").forEach(el => {
+        let speed = el.getAttribute("data-speed") || 1;
+        gsap.fromTo(el, 
+            { y: "-80%" }, 
+            { 
+                y: "30%", 
+                ease: "none",
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 3  
+                }
+            }
+        );
+    });
+});
+
+// Función para desplazamiento suave
+function scrollToSection() {
+    document.getElementById("seccion2").scrollIntoView({ behavior: "smooth" });
+}
+
+
+// CANVAS
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = 160;
+canvas.height = 160;
+
+document.body.style.backgroundColor = "black"; 
+ctx.strokeStyle = "white"; 
+ctx.lineWidth = 1;
+
+//  suelo
+ctx.beginPath();
+ctx.moveTo(10, 140);
+ctx.lineTo(200, 140);
+ctx.stroke();
+
+// maceta
+ctx.beginPath();
+ctx.moveTo(60, 120);
+ctx.lineTo(100, 120);
+ctx.lineTo(95, 140); 
+ctx.lineTo(65, 140); 
+ctx.closePath();
+ctx.stroke();
+
+// tallo de la planta
+ctx.beginPath();
+ctx.moveTo(80, 120);
+ctx.lineTo(80, 90);
+ctx.stroke();
+
+// hojas abiertas
+ctx.beginPath();
+ctx.moveTo(80, 110);
+ctx.quadraticCurveTo(60, 100, 70, 70); 
+ctx.quadraticCurveTo(80, 95, 80, 110);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(80, 105);
+ctx.quadraticCurveTo(100, 95, 90, 70); 
+ctx.quadraticCurveTo(80, 95, 80, 105);
+ctx.stroke();
+
+
+</script>
+{% endblock %}
 
