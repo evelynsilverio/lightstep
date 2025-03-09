@@ -98,6 +98,11 @@
         padding: 3rem; 
     }
 
+    .text h1{
+        margin-top: -55px;
+        text-align: center;
+    }
+
     .p-6 {
         padding: 2rem; 
     }
@@ -114,7 +119,7 @@
 {% block content %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <br><br><br>
-<h1 class="text-5xl font-bold text-center mt-2 tracking-widest">¡Comencemos!</h1></span></h1><br><br>
+<h1 class="text-6xl font-bold text-center -mt-10 tracking-widest">¡Comencemos!</h1><br><br>
 
 
 <body class="gradient-bg min-h-screen flex flex-col justify-center items-center text-center text-white">
@@ -126,15 +131,15 @@
         </div>
 
         <div class="info-section">
-            <p class="text-gray-300 text-lg leading-relaxed text-left">
+            <p class="mt-4 text-gray-300 text-lg leading-relaxed !font-bold list-disc pl-5 text-left">
                 LightStep es un sistema de iluminación inteligente que mejora la seguridad, eficiencia energética y comodidad en diversos entornos. Con LightStep puedes:
-            </p><br>
+            </p>
             <div class="flex gap-4">
                 <div class="space-y-2">
-                    <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></span>Cambiar el color de las luces a tu gusto.</p>
-                    <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></span>Elegir efectos visuales (estático, radial, arcoíris).</p>
-                    <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-orange-500 rounded-full inline-block mr-2"></span>Ver estadísticas sobre el tiempo de uso del sistema.</p>
-                    <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-pink-500 rounded-full inline-block mr-2"></span>Programar el tiempo en que el sistema se apague o encienda.</p>
+                    <p class="text-gray-300 font-bold mt-4 text-gray-300 text-lg leading-relaxed list-disc pl-5 flex items-center"><span class="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></span>Cambiar el color de las luces a tu gusto.</p>
+                    <p class="text-gray-300 font-bold mt-4 text-gray-300 text-lg leading-relaxed list-disc pl-5 flex items-center"><span class="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></span>Elegir efectos visuales (estático, radial, arcoíris).</p>
+                    <p class="text-gray-300 font-bold mt-4 text-gray-300 text-lg leading-relaxed list-disc pl-5 flex items-center"><span class="w-4 h-4 bg-orange-500 rounded-full inline-block mr-2"></span>Ver estadísticas sobre el tiempo de uso del sistema.</p>
+                    <p class="text-gray-300 font-bold mt-4 text-gray-300 text-lg leading-relaxed list-disc pl-5 flex items-center"><span class="w-4 h-4 bg-pink-500 rounded-full inline-block mr-2"></span>Programar el tiempo en que el sistema se apague o encienda.</p>
                 </div>
             </div>
         </div>
@@ -143,32 +148,29 @@
     <div id="gallery-container" ></div>
 
 </body><br><br><br>
-
-<!-- una galería de imágenes -->
-
 <body class="gradient-bg min-h-screen flex flex-col justify-center items-center text-center text-white">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 p-10 w-full max-w-5xl">
         <div class="p-10 rounded-3xl shadow-2xl border-transparent transition-all duration-300 hover:border-yellow-400 hover:shadow-yellow-400/50 bg-gradient-to-r from-orange-500 to-red-500 transform hover:scale-105 opacity-0" id="objetivo-general">
-            <h3 class="font-extrabold text-3xl mb-6 text-white drop-shadow-lg tracking-wide">Objetivo General</h3>
-            <p class="text-white text-lg leading-relaxed">
+            <h3 class="font-extrabold text-3xl mb-6 text-white drop-shadow-lg leading-relaxed ">Objetivo General</h3>
+            <p class="!text-white text-lg font-bold leading-relaxed">
                 Desarrollar un sistema de iluminación inteligente, adaptable a escaleras, pasillos y diferentes espacios, que mejore la seguridad, optimice el consumo energético y brinde personalización mediante una aplicación móvil y plataforma web.
             </p>
         </div>
 
         <!-- Objetivos Específicos -->
         <div class="p-10 rounded-3xl shadow-2xl border-transparent transition-all duration-300 hover:border-purple-400 hover:shadow-purple-400/50 bg-gradient-to-r from-purple-500 to-pink-500 transform hover:scale-105 opacity-0" id="objetivo-especifico">
-            <h3 class="font-extrabold text-3xl mb-6 text-white drop-shadow-lg tracking-wide "> Objetivos Específicos</h3>
+            <h3 class="font-extrabold text-3xl mb-6 text-white drop-shadow-lg leading-relaxed  "> Objetivos Específicos</h3>
             <ul class="text-lg leading-relaxed text-left space-y-4">
-                <li class="flex items-center">
-                    <span class="w-8 h-8 bg-white text-purple-600 font-bold rounded-full flex items-center justify-center mr-4">1</span>
+                <li class="flex items-center font-bold">
+                    <span class="w-8 h-8 bg-white font-bold text-purple-600 font-bold rounded-full flex items-center justify-center mr-4">1</span>
                     Implementar sensores para detectar la presencia de personas y activar las luces automáticamente.
                 </li>
-                <li class="flex items-center">
-                    <span class="w-8 h-8 bg-white text-purple-600 font-bold rounded-full flex items-center justify-center mr-4">2</span>
+                <li class="flex items-center font-bold">
+                    <span class="w-8 h-8 bg-white font-bold text-purple-600 font-bold rounded-full flex items-center justify-center mr-4">2</span>
                     Crear una aplicación móvil que permita al usuario personalizar el sistema.
                 </li>
-                <li class="flex items-center">
-                    <span class="w-8 h-8 bg-white text-purple-600 font-bold rounded-full flex items-center justify-center mr-4">3</span>
+                <li class="flex items-center font-bold">
+                    <span class="w-8 h-8 bg-white font-bold text-purple-600 font-bold rounded-full flex items-center justify-center mr-4">3</span>
                     Diseñar una página web para visualizar las características del sistema.
                 </li>
             </ul>
@@ -183,7 +185,7 @@
                     01
                 </span>
                 <span class="text-white font-medium">
-                    <strong class="text-blue-400">Diseño Moderno y Estético.</strong>   La integración de luces LED y el control por aplicación hacen que el sistema se vea elegante y futurista en cualquier espacio.
+                    <strong class="text-blue-400 leading-relaxed ">Diseño Moderno y Estético.</strong>   La integración de luces LED y el control por aplicación hacen que el sistema se vea elegante y futurista en cualquier espacio.
                 </span>
             </p>
             <p class="flex items-center bg-gray-900 p-4 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
@@ -191,7 +193,7 @@
                     02
                 </span>
                 <span class="text-white font-medium">
-                    <strong class="text-blue-400">Automatización Inteligente.</strong>   Gracias al uso de sensores de movimiento y control a distancia, el sistema opera sin necesidad de interacción manual constante.
+                    <strong class="text-blue-400 leading-relaxed ">Automatización Inteligente.</strong>   Gracias al uso de sensores de movimiento y control a distancia, el sistema opera sin necesidad de interacción manual constante.
                 </span>
             </p>
             <p class="flex items-center bg-gray-900 p-4 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
@@ -199,7 +201,7 @@
                     03
                 </span>
                 <span class="text-white font-medium">
-                    <strong class="text-blue-400">Seguridad Mejorada.</strong>   Al detectar movimiento y encender las luces automáticamente, reduce el riesgo de accidentes en escaleras y pasillos oscuros.
+                    <strong class="text-blue-400 leading-relaxed ">Seguridad Mejorada.</strong>   Al detectar movimiento y encender las luces automáticamente, reduce el riesgo de accidentes en escaleras y pasillos oscuros.
                 </span>
             </p>
         </div><br><br><br>
@@ -211,8 +213,9 @@
 <script>
 gsap.to("#objetivo-general", { opacity: 1, y: -20, duration: 1, delay: 0.3, ease: "power3.out" });
 gsap.to("#objetivo-especifico", { opacity: 1, y: -20, duration: 1, delay: 0.6, ease: "power3.out" });
+
+// carrusel de imágenes
 document.addEventListener("DOMContentLoaded", function () {
-    // Crear la escena
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 1, 100);
     const renderer = new THREE.WebGLRenderer();
@@ -220,7 +223,6 @@ document.addEventListener("DOMContentLoaded", function () {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById("gallery-container").appendChild(renderer.domElement);
 
-    // Crear un carrusel circular de imágenes
     const textureLoader = new THREE.TextureLoader();
     const radius = 7;
     const imagePaths = [
@@ -254,13 +256,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Animación de rotación
     function animate() {
         requestAnimationFrame(animate);
-        
-        // Rotación continua
         scene.rotation.y += 0.003;
-        
         renderer.render(scene, camera);
     }
-    
     animate();
 });
 </script>

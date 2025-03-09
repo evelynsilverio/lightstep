@@ -1,0 +1,15 @@
+body {
+    font-family: 'Afacad Flux'!important;
+    font-size: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Poetsen One' !important;
+    font-weight: bold !important;
+    letter-spacing: 0.2em !important;
+}
+
+p {
+    font-size: 17px !important;
+    color: rgb(179, 182, 182) !important;
+}

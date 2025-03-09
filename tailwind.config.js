@@ -10,3 +10,15 @@ module.exports = {
     },
     plugins: [require('daisyui')],
 }
+module.exports = {
+  theme: {
+    extend: {
+      fontFamily: {
+        titulo: ['Poppins', 'sans-serif'],
+        cuerpo: ['Roboto', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+};
+

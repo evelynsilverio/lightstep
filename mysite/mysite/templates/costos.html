@@ -36,7 +36,7 @@
       <img src="{% static 'img/LS.png'%}" alt="Imagen de fondo" class="absolute inset-0 w-full h-full object-cover">
       <div class="relative z-10 text-center text-white p-10">
         <!-- Titulo "Costos" ajustado para que esté mucho más abajo -->
-        <h1 class="absolute bottom--12 left-10 mb-4 text-8xl font-bold text-white z-10" id="animado">Costos</h1>
+        <h1 class="text-6xl font-bold text-right mt-40 tracking-widest" id="animado">Planes</h1>
     
         <script>
           const elemento = document.getElementById("animado");
@@ -53,7 +53,7 @@
 
     <!-- Titulo "Planes" -->
     <div class="text-center mt-10">
-      <h1 class="text-6xl font-bold text-white animate__animated" id="planos">Planes</h1>
+      <h1 class="text-6xl font-bold text-white animate__animated" id="planos"></h1>
 
       <script>
         const h1Element = document.getElementById("planos");
@@ -72,10 +72,12 @@
       </script>
     </div>
 
-    <br><br><br><br>
+    <br><br>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
       <!-- Plan Básico -->
-      <div class="p-8 rounded-3xl shadow-xl border-transparent transition-all duration-300 hover:border-purple-400 hover:shadow-purple-400/50 bg-gradient-to-r from-violet-500 to-pink-500 transform hover:scale-105">
+      <div class="p-8 rounded-3xl shadow-xl border-transparent transition-all duration-300 hover:border-purple-400 hover:shadow-purple-400/50 transform hover:scale-105"
+    style="background: linear-gradient(to right, rgba(138, 92, 246, 0.574), rgba(236, 72, 154, 0.527));">
+
         <h3 class="font-extrabold text-2xl mb-4 text-white drop-shadow-lg tracking-wide text-center">Plan Básico<br>(Esencial)</h3>
         <ul class="text-md leading-relaxed text-left space-y-3 text-white">
           <li class="flex items-center"><span class="w-6 h-6 bg-white text-blue-600 font-bold rounded-full flex items-center justify-center mr-3">1</span> Control básico de encendido y apagado por detección de movimiento.</li>
@@ -87,8 +89,9 @@
       </div>
     
       <!-- Plan Intermedio -->
-      <div class="p-8 rounded-3xl shadow-xl border-transparent transition-all duration-300 hover:border-green-400 hover:shadow-green-400/50 bg-gradient-to-r from-orange-500 to-red-500 transform hover:scale-105">
-        <h3 class="font-extrabold text-2xl mb-4 text-white drop-shadow-lg tracking-wide text-center">Plan Intermedio<br>(Personalizado)</h3>
+      <div class="p-8 rounded-3xl shadow-xl border-transparent transition-all duration-300 hover:border-purple-400 hover:shadow-purple-400/50 transform hover:scale-105"
+      style="background: linear-gradient(to right, rgba(241, 126, 2, 0.574), rgba(234, 7, 7, 0.527));">
+      <h3 class="font-extrabold text-2xl mb-4 text-white drop-shadow-lg tracking-wide text-center">Plan Intermedio<br>(Personalizado)</h3>
         <ul class="text-md leading-relaxed text-left space-y-3 text-white">
           <li class="flex items-center"><span class="w-6 h-6 bg-white text-green-600 font-bold rounded-full flex items-center justify-center mr-3">1</span> Incluye todo el plan básico.</li>
           <li class="flex items-center"><span class="w-6 h-6 bg-white text-green-600 font-bold rounded-full flex items-center justify-center mr-3">2</span> Personalización de muchos más colores.</li>
@@ -99,9 +102,12 @@
       </div><br>
     
       <!-- Plan Premium (Abajo centrado) -->
-      <div class="p-8 rounded-3xl shadow-xl border-transparent transition-all duration-300 hover:border-orange-400 hover:shadow-orange-400/50 bg-gradient-to-r from-blue-500 to-green-500 transform hover:scale-105 col-span-1 md:col-span-2 mx-auto w-full md:w-[60%]">
-        <h3 class="font-extrabold text-2xl mb-4 text-white drop-shadow-lg tracking-wide text-center">Plan Premium<br>(La mejor experiencia)</h3>
-        <ul class="text-md leading-relaxed text-left space-y-3 text-white">
+       <div class="p-8 rounded-3xl shadow-xl border-transparent transition-all duration-300 hover:border-purple-400 
+       hover:shadow-purple-400/50 transform hover:scale-105 col-span-1 
+       md:col-span-2 mx-auto w-full md:w-[60%]"
+       style="background: linear-gradient(to right, rgba(12, 169, 194, 0.574), rgba(7, 234, 49, 0.527));">
+        <h3 class="font-extrabold !text-white !font-bold text-2xl mb-4 drop-shadow-lg tracking-wide text-center">Plan Premium<br>(La mejor experiencia)</h3>
+        <ul class="text-md leading-relaxed text-left space-y-3 !font-bold !text-white">
           <li class="flex items-center"><span class="w-6 h-6 bg-white text-orange-600 font-bold rounded-full flex items-center justify-center mr-3">1</span> Incluye todo el plan intermedio.</li>
           <li class="flex items-center"><span class="w-6 h-6 bg-white text-orange-600 font-bold rounded-full flex items-center justify-center mr-3">1</span> Acceso a actualizaciones de software premium y características futuras.</li>
           <li class="flex items-center"><span class="w-6 h-6 bg-white text-orange-600 font-bold rounded-full flex items-center justify-center mr-3">1</span> Integración con asistentes de voz (Google Assistant, Alexa, etc.).</li>

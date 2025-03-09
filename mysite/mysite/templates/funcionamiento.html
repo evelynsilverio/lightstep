@@ -1,8 +1,9 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block title %} Funcionamiento {% endblock %}
 
 {% block extra_css %}
+
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -12,9 +13,6 @@
     padding: 0;
   }
 
-  .recuadro {
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Bordes finos y uniformes */
-  }
 </style>
 {% endblock %}
   
@@ -31,9 +29,9 @@
   />
 
   <!-- Header Section -->
-  <div class="p-4 rounded-3xl shadow-lg w-full mx-auto flex items-center justify-center animate__animated" id="planos" style="background-color: rgba(30, 174, 227, 0.093);">
-    <h3 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-semibold text-white text-center">Como funciona <br> LightStep</h3>
-    <img src="{% static 'img/LS.png'%}" alt="LightStep Logo" class="w-[500px] sm:w-[500px] md:w-[400px] h-auto rounded-3xl justify-right">
+  <div class="p-4 rounded-3xl shadow-lg w-full mx-auto flex items-center justify-center animate__animated" id="planos">
+    <h3 class="text-6xl font-bold text-center -mt-7 tracking-widest">¿Cómo funciona <br> LightStep?</h3>
+    <img src="{% static 'img/LS.png'%}" alt="LightStep Logo" class="w-[500px] sm:w-[500px] md:w-[400px] h-auto rounded-4xl justify-right">
   </div>
 
   <script>
@@ -49,7 +47,7 @@
     observer.observe(h1Element);
   </script>
 
-  <br>
+  <br><br><br>
 
   <!-- Steps Section -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center text-white max-w-5xl mx-auto">
@@ -59,16 +57,16 @@
         <div class="w-40 h-40 rounded-full overflow-hidden mx-auto">
           <img src="{% static 'img/1.png' %}" alt="Imagen 1" class="w-full h-full object-cover">
         </div>
-        <p class="mt-4 text-sm sm:text-base">Primero LightStep deberá ser instalado en el lugar deseado. <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p class="mt-4 text-sm sm:text-base font-bold leading-relaxed text-gray-300">Primero LightStep deberá ser instalado en el lugar deseado. <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
       </div>
     </div>
-
+    <!-- mt-4 text-gray-300 text-lg leading-relaxed list-disc pl-5 -->
     <div class="m-2 p-[0.5px] bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg recuadro">
       <div class="p-4 rounded-lg mx-auto animado bg-black">
         <div class="w-40 h-40 rounded-full overflow-hidden mx-auto">
           <img src="{% static 'img/2.png' %}" alt="Imagen 2" class="w-full h-full object-cover">
         </div>
-        <p class="mt-4 text-sm sm:text-base">LightStep deberá conectarse a la app para empezar a funcionar y también donde se va a iniciar sesión.</p>
+        <p class="mt-4 text-sm sm:text-base font-bold leading-relaxed text-gray-300">LightStep deberá conectarse a la app para empezar a funcionar y también donde se va a iniciar sesión.</p>
       </div>
     </div>
 
@@ -77,7 +75,7 @@
         <div class="w-40 h-40 rounded-full overflow-hidden mx-auto">
           <img src="{% static 'img/3.png' %}" alt="Imagen 3" class="w-full h-full object-cover">
         </div>
-        <p class="mt-4 text-sm sm:text-base">Este se podrá activar y desactivar, dependiendo de las necesidades. <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p class="mt-4 text-sm sm:text-base font-bold leading-relaxed text-gray-300">Este se podrá activar y desactivar, dependiendo de las necesidades. <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
       </div>
     </div>
 
@@ -86,7 +84,7 @@
         <div class="w-40 h-40 rounded-full overflow-hidden mx-auto">
           <img src="{% static 'img/4.png' %}" alt="Imagen 4" class="w-full h-full object-cover">
         </div>
-        <p class="mt-4 text-sm sm:text-base">Las luces podrán tener mayor personalización para los gustos de cada usuario.</p>
+        <p class="mt-4 text-sm sm:text-base font-bold leading-relaxed text-gray-300">Las luces podrán tener mayor personalización para los gustos de cada usuario.</p>
       </div>
     </div>
 
@@ -95,7 +93,7 @@
         <div class="w-40 h-40 rounded-full overflow-hidden mx-auto">
           <img src="{% static 'img/5.png' %}" alt="Imagen 5" class="w-full h-full object-cover">
         </div>
-        <p class="mt-4 text-sm sm:text-base">En el apartado del perfil podrás ver mayor información sobre tus preferencias con el producto.</p>
+        <p class="mt-4 text-sm sm:text-base font-bold leading-relaxed text-gray-300">En el apartado del perfil podrás ver mayor información sobre tus preferencias con el producto.</p>
       </div>
     </div>
 
@@ -104,7 +102,7 @@
         <div class="w-40 h-40 rounded-full overflow-hidden mx-auto">
           <img src="{% static 'img/6.png' %}" alt="Imagen 6" class="w-full h-full object-cover">
         </div>
-        <p class="mt-4 text-sm sm:text-base">LightStep podrá usarse en el lugar que quieras.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p class="mt-4 text-sm sm:text-base font-bold leading-relaxed text-gray-300">LightStep podrá usarse en el lugar que quieras.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
       </div>
     </div>
 

@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 
 {% block title %} Contacto {% endblock %}
@@ -36,7 +35,7 @@
 .contact-title {
     font-size: 24px;
     padding: 10px;
-    background: linear-gradient(45deg, #FF00FF, #800080);
+    background: linear-gradient(45deg, #ff00ff12, #8000803a);
     border-radius: 20px;
     display: inline-block;
 }
@@ -103,10 +102,8 @@ h2 {
     font-weight: bold;
     text-transform: capitalize; /* Primera letra en mayúscula, resto en minúscula */
     letter-spacing: 2px;
-    color: #ff00ff;
     text-align: center;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 5px rgba(255, 0, 128, 0.7);
 }
 
 /* Iconos sociales */
@@ -151,7 +148,7 @@ h2 {
     color: white;
     padding: 40px;
     border-radius: 20px;
-    background: linear-gradient(to bottom, #3a0b58, #5e1650); /* Tonos más vibrantes */
+    background: linear-gradient(45deg,#ca850531, #8e16cf57);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     width: 350px;
     height: 500px; /* Aumenta la altura */
@@ -313,8 +310,8 @@ h1 {
 
 <div class="contact-container">
     <div class="contact-form">
-        <h2  class="text-3xl font-bold inline-block px-8 py-3 shadow-lg bg-black gradient-border">Escríbenos</h2>
-        <form method="POST" action="{% url 'contacto' %}">
+        <h2  class="text-6xl font-bold text-left -mt-4 tracking-widest ">Escríbenos</h2>
+        <form method="POST" action="{% url 'contacto' %}"><br>
             {% csrf_token %}
             <div class="input-group">
                 <input type="text" placeholder="Nombre" name="nombre">
@@ -325,18 +322,23 @@ h1 {
                 <input type="email" placeholder="Correo" name="correo" required>
             </div>
             <textarea placeholder="Mensaje" name="mensaje"></textarea>
-        
-            <button class="relative text-white px-6 py-3 rounded-lg border-2 border-transparent font-semibold transition-all duration-300 group">
+            <br>
+            <div class="flex justify-end">
+                <button class="relative text-white px-6 py-3 rounded-lg border-2 border-transparent font-semibold transition-all duration-300 group ml-4 
+                hover:scale-105 hover:shadow-lg focus:ring-5 focus:ring-purple-400 focus:outline-none">
                 <span class="relative z-10">Enviar</span>
-                <span class="absolute inset-0 rounded-lg border-2 border-transparent bg-gradient-to-br from-purple-500 to-pink-500 group-hover:border-transparent group-hover:bg-clip-border group-hover:border-2 group-hover:border-transparent"></span>
-            </button>
+                <span class="absolute inset-0 rounded-lg border-2 border-transparent bg-gradient-to-br from-purple-500 to-pink-500 group-hover:border-transparent group-hover:bg-clip-border group-hover:border-2 group-hover:border-transparent">
+                </span>
+                </button>
+            </div>
+            
         </form>
 
     </div>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
     <div class="container">
-        <h1>Información de<br>contacto <br> 
+        <h1 class=" text-[20px] text-center mt-7t">Información de<br>contacto <br> 
             <i class="bi bi-envelope"></i> lightstepkeel@gmail.com
           </h1>
 

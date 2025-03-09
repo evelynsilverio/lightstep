@@ -86,18 +86,19 @@
 </style>
 {% endblock %}
 {% block content %}
-        <h1 class="text-6xl font-bold text-center mt-10 tracking-widest">LightStep</span></h1>
-        <div class="flex justify-center space-x-20 mt-12">
+<h1 class="text-6xl font-bold text-center mt-12 tracking-widest">LightStep</h1>
+<br>
+<div class="flex justify-center space-x-20 mt-12">
             <a href="{% url 'proyecto' %}" class="neon-button bg-cyan">
-                <p class="text-white text-2xl font-semibold animate-bounce">¿Qué es este proyecto?</p>
+                <p class="!text-white !text-2xl !font-bold !animate-bounce">¿Qué es este proyecto?</p>
             </a>
     
             <a href="{% url 'funcionamiento' %}" class="neon-button bg-purple">
-                <p class="text-white text-2xl font-semibold animate-bounce">¿Cómo funciona?</p>
+                <p class="!text-white !text-2xl !font-bold !font-semibold !animate-bounce">¿Cómo funciona?</p>
             </a>
     
             <a href="{% url 'costos' %}" class="neon-button bg-yellow">
-                <p class="text-white text-2xl font-semibold animate-bounce">Costos</p>
+                <p class="!text-white !text-2xl !font-bold !font-semibold !animate-bounce">Costos</p>
             </a>
         </div>
     </div>
@@ -107,13 +108,13 @@
         ¿Por qué es importante?
     </h2>
     <div class="mt-6 max-w-3xl ml-auto mr-0">
-        <p class="text-gray-300 text-lg leading-relaxed text-left">
+        <p class="text-gray-300 text-[18px] font-bold leading-relaxed text-justify">
             En un mundo donde la automatización y la eficiencia energética son clave, nuestro sistema de iluminación inteligente para escaleras ofrece:
         </p>
-        <ul class="mt-4 text-gray-300 text-lg leading-relaxed list-disc pl-5">
-            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></span>Seguridad: Reduce el riesgo de accidentes al iluminar automáticamente los escalones cuando detecta movimiento.</li>
-            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></span>Eficiencia energética: Las luces solo se encienden cuando es necesario.</li>
-            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-orange-500 rounded-full inline-block mr-2"></span>Innovación y confort: Transforma cualquier espacio en un entorno inteligente y moderno.</li>
+        <ul class="mt-4 text-gray-300  list-disc pl-5">
+            <p class="text-gray-300 font-bold flex items-center text-justify"><span class="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></span>Seguridad: Reduce el riesgo de accidentes al iluminar automáticamente los escalones cuando detecta movimiento.</li>
+            <p class="text-gray-300 font-bold flex items-center text-justify"><span class="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></span>Eficiencia energética: Las luces solo se encienden cuando es necesario.</li>
+            <p class="text-gray-300 font-bold flex items-center text-justify"><span class="w-4 h-4 bg-orange-500 rounded-full inline-block mr-2"></span>Innovación y confort: Transforma cualquier espacio en un entorno inteligente y moderno.</li>
         </ul>
     </div>
 </section>
@@ -123,15 +124,15 @@
         Tecnologías utilizadas
     </h2>
     <div class="mt-6 max-w-3xl ml-auto mr-0">
-        <p class="text-gray-300 text-lg leading-relaxed text-left">
+        <p class="text-gray-300 font-bold text-justify">
             Para desarrollar un sistema eficiente y escalable, utilizamos herramientas modernas en hardware y software:
         </p>
         <ul class="mt-4 text-gray-300 text-lg leading-relaxed list-disc pl-5">
-            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></span>Backend: Django para gestionar la lógica del sistema y la comunicación con la base de datos.</li>
-            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></span>Frontend: Tailwind CSS y Django Templates para una interfaz web intuitiva y moderna.</li>
-            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-orange-500 rounded-full inline-block mr-2"></span>Base de datos: Firebase para almacenar datos de configuración y uso del sistema.</li>
-            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-pink-500 rounded-full inline-block mr-2"></span>Microcontrolador: ESP32 para la gestión de sensores y luces LED.</li>
-            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-pink-500 rounded-full inline-block mr-2"></span>Aplicación móvil: Flutter para permitir el control remoto del sistema.</li>
+            <p class="text-gray-300 font-bold flex items-center text-justify"><span class="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></span>Backend: Django para gestionar la lógica del sistema y la comunicación con la base de datos.</li>
+            <p class="text-gray-300 font-bold flex items-center text-justify"><span class="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></span>Frontend: Tailwind CSS y Django Templates para una interfaz web intuitiva y moderna.</li>
+            <p class="text-gray-300 font-bold flex items-center text-justify"><span class="w-4 h-4 bg-orange-500 rounded-full inline-block mr-2"></span>Base de datos: Firebase para almacenar datos de configuración y uso del sistema.</li>
+            <p class="text-gray-300 font-bold flex items-center text-justify"><span class="w-4 h-4 bg-pink-500 rounded-full inline-block mr-2"></span>Microcontrolador: ESP32 para la gestión de sensores y luces LED.</li>
+            <p class="text-gray-300 font-bold flex items-center text-justify"><span class="w-4 h-4 bg-pink-500 rounded-full inline-block mr-2"></span>Aplicación móvil: Flutter para permitir el control remoto del sistema.</li>
         </ul>
     </div>
 </section>
@@ -139,14 +140,14 @@
     <h2 class="text-2xl font-bold inline-block px-8 py-3 shadow-lg bg-black gradient-border">
         Nuestro enfoque
     </h2>
-    <div class="mt-6 max-w-3xl ml-auto mr-0">
-        <p class="text-gray-300 text-lg leading-relaxed text-left">
+    <div class="mt-6 max-w-3xl ml-auto mr-0  ">
+        <p class="text-gray-300 font-bold text-[18px] text-justify">
             Nos diferenciamos por nuestra visión de crear un producto que no solo sea funcional, sino también adaptable y personalizable a las necesidades de cada usuario:
         </p>
-        <ul class="mt-4 text-gray-300 text-lg leading-relaxed list-disc pl-5">
-            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></span>Interfaz intuitiva y configuración sencilla a través de la app.</li>
-            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></span>Algoritmos inteligentes que optimizan el encendido y apagado.</li>
-            <p class="text-gray-300 flex items-center"><span class="w-4 h-4 bg-orange-500 rounded-full inline-block mr-2"></span>Ajuste de intensidad, colores y patrones de iluminación</li>
+        <ul class="mt-4 text-gray-300  list-disc pl-5">
+            <p class="text-gray-300 font-bold flex items-center text-justify"><span class="w-4 h-4 bg-purple-500 rounded-full inline-block mr-2"></span>Interfaz intuitiva y configuración sencilla a través de la app.</li>
+            <p class="text-gray-300 font-bold flex items-center text-justify"><span class="w-4 h-4 bg-blue-500 rounded-full inline-block mr-2"></span>Algoritmos inteligentes que optimizan el encendido y apagado.</li>
+            <p class="text-gray-300 font-bold flex items-center text-justify"><span class="w-4 h-4 bg-orange-500 rounded-full inline-block mr-2"></span>Ajuste de intensidad, colores y patrones de iluminación</li>
         </ul>
     </div>
 </section>
