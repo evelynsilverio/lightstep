@@ -80,9 +80,27 @@
         100% { left: 150%; }
     }
 
+    
+
     .bg-cyan { background: linear-gradient(45deg, #06b6d4, #2563eb); }
     .bg-purple { background: linear-gradient(45deg, #a855f7, #ec4899); }
     .bg-yellow { background: linear-gradient(45deg, #facc15, #ea580c); }
+
+    @media (max-width: 768px) {
+  .offset-up, .offset-down {
+    transform: translateY(0); /* Sin desplazamiento en móviles */
+  }
+
+    .neon-button {
+        width: 200px !important; /* Ajusta el ancho del botón en móviles */
+        height: 10rem; /* Ajusta la altura del botón en móviles */
+        padding: 10px; /* Ajusta el padding del botón en móviles */
+    }
+
+    .neon-button p{
+        font-size: 1rem !important; /* Ajusta el tamaño de la fuente en móviles */
+    }
+}
 </style>
 {% endblock %}
 {% block content %}
@@ -151,6 +169,74 @@
         </ul>
     </div>
 </section>
+
+<br>
+<div class="flex justify-center items-center pt-8">
+    <button class="btn" onclick="my_modal_5.showModal()">Términos y Condiciones de Uso</button>
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle bg-black bg-opacity-90">
+    <div class="modal-box p-8">
+        <h3 class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 shadow-lg text-center">
+            Términos y Condiciones de Uso
+        </h3>    
+        <div class=" text-gray-400 text-justify font">
+            <h5 class="text-white text-lg font-semibold">1. Introducción</h5>
+            <ul> <li>Esta sección establece los términos y condiciones del sistema de iluminación inteligente “LightStep” que es funcional para escaleras y pasillos, incluyendo funcionamiento con sensores, la aplicación móvil y la base de datos. Al utilizar este sistema, el usuario acepta los siguientes términos y condiciones.</li></ul>
+
+            <h5 class="text-white text-lg font-semibold">2. Descripción del Servicio</h5>
+            <ul> <li>El sistema de iluminación inteligente está diseñado para optimizar el uso de energía mediante el encendido y apagado automático de luces según la detección de movimiento. Además permite ajustes personalizados en la configuración de las luces a través de la aplicación móvil, proporciona información detallada a través de la aplicación web y gestiona datos en una base de datos. </li></ul>
+
+            <h5 class="text-white text-lg font-semibold">3. Uso y Requisitos del Sistema</h5>
+            <ul class="list-disc pl-5">
+                <li>Los sensores detectan movimiento en escaleras, pasillos y otras áreas designadas, permitiendo activarse progresivamente las luces sin retrasos.</li>
+                <li>Las luces se apagan automáticamente tras un periodo de inactividad para reducir el consumo energético.</li>
+                <li>El sistema debe responder en menos de 5 segundos tras la detección de movimiento.</li>
+                <li>La aplicación web proporciona información detallada sobre el sistema, preguntas frecuentes y un formulario de contacto para soporte técnico.</li>
+                <li>La aplicación móvil permite la sincronización de configuraciones entre dispositivos mediante almacenamiento en la nube.</li>
+                <li>Todas las interfaces del sistema deben ser intuitivas y fáciles de usar.</li>
+            </ul>
+
+            <h5 class="text-white text-lg font-semibold">4. Responsabilidades del Usuario</h5>
+            <ul class="list-disc pl-5">
+                <li>El usuario debe asegurarse de la instalación adecuada del sistema según las instrucciones proporcionadas.</li>
+                <li>Es responsabilidad del usuario mantener el sistema actualizado y realizar revisiones periódicas para garantizar su correcto funcionamiento.</li>
+                <li>El usuario no debe modificar o manipular los componentes del sistema sin autorización, ya que esto podría afectar su funcionamiento.</li>
+                <li>El sistema no garantiza un funcionamiento ininterrumpido ya que puede verse afectado por factores externos como cortes de energía, fallos en la conexión a internet, entre otros.</li>
+            </ul>
+
+            <h5 class="text-white text-lg font-semibold">5. Privacidad y Seguridad</h5>
+            <ul class="list-disc pl-5">
+                <li>La información del usuario será utilizada únicamente para la configuración y personalización del sistema.</li>
+                <li>Se aplicarán medidas de seguridad para proteger los datos almacenados en la nube.</li>
+                <li>No se compartirá información personal con terceros sin el consentimiento expreso del usuario.</li>
+            </ul>
+
+            <h5 class="text-white text-lg font-semibold">6. Garantía y Mantenimiento</h5>
+            <ul class="list-disc pl-5">
+                <li>El sistema cuenta con una garantía limitada contra defectos de fabricación por un período determinado de 365 días.</li>
+                <li>La garantía no cubre daños causados por uso indebido, instalación incorrecta o modificaciones no autorizadas.</li>
+                <li>Se recomienda realizar mantenimiento periódico del sistema, incluyendo limpieza de sensores y revisión de conexiones eléctricas, para garantizar su correcto funcionamiento.</li>
+            </ul>
+
+            <h5 class="text-white text-lg font-semibold">7. Modificaciones y Actualizaciones</h5>
+            <ul> <li>Los términos y condiciones pueden ser actualizados en cualquier momento para reflejar mejoras o cambios en el sistema. Se notificará a los usuarios sobre modificaciones relevantes.</li></ul>
+
+            <h5 class="text-white text-lg font-semibold">8. Contacto y Soporte</h5>
+            <ul><li>Para consultas, soporte técnico o información adicional, el usuario puede comunicarse a través del formulario de contacto disponible en la aplicación web o en la aplicación móvil.</li></ul>
+        </div>
+
+        <div class="flex justify-end mt-4">
+            <div class="m-2 p-[0.5px] bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg">
+                <form method="dialog">
+                    <button class="btn text-white !bg-black rounded-lg p-1 pl-4 pr-4 mask mask-squircle hover:bg-gradient-to-br from-purple-500 to-pink-500">
+                        Cerrar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </dialog>
+</div>
+
 <br><br><br><br><br>
 
 {% endblock %}

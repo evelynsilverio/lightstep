@@ -15,7 +15,7 @@
     .container {
         text-align: center;
         margin: 0 auto;
-        padding: -10px -30px; 
+        padding: 20px; 
     }
 
     /* .gradient-line {
@@ -284,11 +284,19 @@
         }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 480px) { 
         .gradient-line {
             width: 100%;
         }
 
+        .container-parraf {
+            display: block !important;
+        }
+
+        .parrafo {
+        display: block !important;
+        max-width: none !important;
+        }
         .team {
             gap: 15px;
         }
@@ -316,7 +324,7 @@
         <h3 class="text-6xl font-bold text-center mt-10 tracking-widest">El equipo</h3>
         <div class="team grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="member text-center">
-                <img src="{% static 'img/avatar_eve.jpg' %}" alt="Imagen 1" class="rounded-full mx-auto w-24 h-24">
+                <img src="{% static 'img/avatr_eve.jpg' %}" alt="Imagen 1" class="rounded-full mx-auto w-24 h-24">
                 <div class="member-info">
                     <p class="leading-relaxed text-gray-300 text-center font-bold">Maria Evelyn Sebastian Silverio<br>
                         Rol: Project Manager
@@ -387,9 +395,9 @@
 </div>
 <br>
 
-    <section class="mt-4 text-gray-300 font-bold text-[17px] leading-relaxed list-disc pl-5">
+    <section class="mt-4 text-gray-300 font-bold text-[17px] leading-relaxed list-disc pl-5 container-parraf">
         <h2 class="text-2xl font-bold inline-block px-8 py-3 shadow-lg bg-black gradient-border">¿Quiénes somos?</h2>
-        <p>En KEEL, diseñamos sistemas de iluminación inteligente para escaleras, combinando tecnología avanzada y diseño innovador.
+        <p class="parrafo">En KEEL, diseñamos sistemas de iluminación inteligente para escaleras, combinando tecnología avanzada y diseño innovador.
             Ofrecemos luces sincronizadas con el movimiento, sensores
             inteligentes, control móvil y efectos personalizables, mejorando la seguridad y la experiencia visual. ¡Transformamos tus escaleras!🌟</p>
     </section>

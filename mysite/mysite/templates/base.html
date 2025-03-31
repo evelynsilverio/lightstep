@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'styles/output.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="{% static 'js/animaciones.js' %}"></script>
+    <!-- <script src="{% static 'js/animaciones.js' %}"></script> -->
     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
     <link rel="stylesheet" href="{% static 'styles/tailwind.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor">
-              <a href="{% url 'home'%}">
+              <a>
               <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -61,45 +61,10 @@
               <li><a href="{% url 'acerca'%}">Acerca del Proyecto</a></li>
               <li><a href="{% url 'nosotros'%}">Sobre Nosotros</a></li>
               <li><a href="{% url 'contacto'%}">Contacto</a></li>
-
-              <ul class="menu menu-horizontal px-1">
-                <li class="m-2 relative">
-                  <a class="text-xl rounded-lg p-3 mask mask-squircle relative leading-relaxed
-                    after:absolute after:left-1/2 after:bottom-1 after:-translate-x-1/2 
-                    after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-500 after:to-pink-500 
-                    after:transition-all after:duration-300 hover:after:w-3/4" href="{% url 'home'%}#seccion2">
-                    Aplicación
-                  </a>
-                </li>
-                <li class="m-2 relative">
-                  <a class="text-xl rounded-lg p-3 mask mask-squircle relative leading-relaxed 
-                    after:absolute after:left-1/2 after:bottom-1 after:-translate-x-1/2 
-                    after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-500 after:to-pink-500 
-                    after:transition-all after:duration-300 hover:after:w-3/4" href="{% url 'acerca'%}">
-                    Acerca del Proyecto
-                  </a>
-                </li>
-                <li class="m-2 relative">
-                  <a class="text-xl rounded-lg p-3 mask mask-squircle relative leading-relaxed
-                    after:absolute after:left-1/2 after:bottom-1 after:-translate-x-1/2 
-                    after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-500 after:to-pink-500 
-                    after:transition-all after:duration-300 hover:after:w-3/4" href="{% url 'nosotros'%}">
-                    Sobre Nosotros
-                  </a>
-                </li>
-                <li class="m-2 relative">
-                  <a class="text-xl rounded-lg p-3 mask mask-squircle relative leading-relaxed
-                    after:absolute after:left-1/2 after:bottom-1 after:-translate-x-1/2 
-                    after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-500 after:to-pink-500 
-                    after:transition-all after:duration-300 hover:after:w-3/4" href="{% url 'contacto'%}">
-                    Contacto
-                  </a>
-                </li>
-              </ul>
               
             </ul>
           </div>
-          <a class="!max-w-[80px] !max-h-[80px]"><img src="../static/img/logo.png" alt="logo" class="logo"></a>
+          <a class="max-w-[80px] max-h-[80px]"><img src="../static/img/logo.png" alt="logo" class="logo"></a>
           <h3 class="title">LightStep</h3>
         </div>
 
@@ -140,7 +105,7 @@
           </ul>
         </div>
         <a href="{% url 'home'%}" class="leading-relaxed">
-          <div class="m-2 p-[0.5px] bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg">
+          <div class="m-6 p-[0.5px] bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg">
               <button class="btn text-white !bg-black rounded-lg p-3 mask mask-squircle hover:bg-gradient-to-br from-purple-500 to-pink-500">
                   <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -213,63 +178,51 @@
         </nav>
       </footer>
 </div>
-<!-- <script>
-  let scene, camera, renderer, particles, mouse = { x: 0, y: 0 };
 
-  function init() {
-      scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      camera.position.z = 50;
-
-      renderer = new THREE.WebGLRenderer({ alpha: true });
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      document.body.appendChild(renderer.domElement);
-
-      const geometry = new THREE.BufferGeometry();
-      const numParticles = 200;
-      const positions = new Float32Array(numParticles * 3);
-      
-      for (let i = 0; i < numParticles; i++) {
-          positions[i * 3] = (Math.random() - 0.5) * 100;
-          positions[i * 3 + 1] = (Math.random() - 0.5) * 100;
-          positions[i * 3 + 2] = (Math.random() - 0.5) * 100;
-      }
-      
-      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-      const material = new THREE.PointsMaterial({
-          color: 0x00d4ff,
-          size: 2,
-          transparent: true
-      });
-
-      particles = new THREE.Points(geometry, material);
-      scene.add(particles);
-
-      window.addEventListener("mousemove", onMouseMove);
-      animate();
-  }
-
-  function onMouseMove(event) {
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-  }
-
-  function animate() {
-      requestAnimationFrame(animate);
-
-      particles.rotation.y += 0.002;
-      particles.rotation.x = mouse.y * 0.1;
-      particles.rotation.y = mouse.x * 0.1;
-
-      renderer.render(scene, camera);
-  }
-
-  init();
-</script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
 
+window.onload = function (){
+    gsap.to(".logo", { x: 150,
+    rotation: 360,
+    x: 313,
+    xPercent: -110,
+    duration: 2.3,
+    repeat: 1,
+    yoyo: true,
+    });
+};
+
+// Animacion de texto
+let colors = [
+    "0px 0px 5px #0FF, 0px 0px 10px #0FF, 0px 0px 15px #0FF, 0px 0px 20px #0FF, 0px 0px 25px #0FF, 0px 0px 30px #0FF",
+    "none",
+    "0px 0px 5px #e688f7, 0px 0px 10px #e688f7, 0px 0px 15px #e688f7, 0px 0px 20px #e688f7, 0px 0px 25px #e688f7, 0px 0px 30px #e688f7"
+  ];
+  
+  let colorIndex = 0; // Índice para alternar colores
+  
+  gsap.to(".title", { 
+    duration: 1.4, 
+    delay: 0.5,
+    repeat: colors.length - 2, // Se repite solo hasta llegar al rosa
+    yoyo: false, 
+    onRepeat: function() {
+      colorIndex = (colorIndex + 1) % colors.length; // Alternar entre los colores en orden
+      document.querySelector(".title").style.setProperty("text-shadow", colors[colorIndex], "important");
+    },
+    onStart: function() {
+      document.querySelector(".title").style.setProperty("text-shadow", colors[0], "important");
+    },
+    onComplete: function() {
+      document.querySelector(".title").style.setProperty("text-shadow", colors[2], "important"); // Se queda en rosa
+    }
+  });
+
+
+// //  Animation
+</script>
 {% block scripts %}{% endblock %}
 </body>
 </html>

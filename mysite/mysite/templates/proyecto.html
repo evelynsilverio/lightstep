@@ -113,6 +113,37 @@
     .glow-effect {
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 165, 0, 0.7);
     }
+
+@media (max-width: 480px) {
+    .tracking-widest {
+        font-size: 30px !important;
+    }
+
+    .custom-bg {
+        background-image: url('{% static "img/descarga1.gif" %}');
+        background-size: cover;
+        background-position: center;
+        width: 85%;
+        height: 250px;
+        align-items: center;
+        border-radius: 1rem;
+    }
+
+    .info-section {
+        padding: 2rem;
+        border-radius: 1rem;
+        width: 80%;
+        box-shadow: none;
+    }
+
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+}
     </style>
 {% endblock%}
 

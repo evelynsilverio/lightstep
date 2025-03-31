@@ -296,6 +296,10 @@ h1 {
         font-size: 0.9rem;
         padding: 10px;
     }
+
+    .escribenos{
+        font-size: 2.5rem;
+    }
 }
 
 </style>
@@ -310,7 +314,7 @@ h1 {
 
 <div class="contact-container">
     <div class="contact-form">
-        <h2  class="text-6xl font-bold text-left -mt-4 tracking-widest ">Escríbenos</h2>
+        <h2  class="text-6xl font-bold text-left -mt-4 tracking-widest escribenos">Escríbenos</h2>
         <form method="POST" action="{% url 'contacto' %}"><br>
             {% csrf_token %}
             <div class="input-group">
