@@ -8,13 +8,36 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background: #000;
-        color: white;
+        background: #ffffff;
+        color: rgb(255, 255, 255);
         display: flex;
         flex-direction: column;
         align-items: center;
         height: 200vh;
     }
+
+        /* Estilos de la ventana modal */
+    .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
+    justify-content: center;
+    align-items: center;
+    }
+
+    .modal-content {
+    background-color: #111111;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .hidden {
+    display: none;
+    }
+
 
     #container {
         display: flex;
@@ -240,10 +263,25 @@ body {
                     </div>
                     <div class="card offset-down flex flex-col items-center justify-center gap-4">
                         <h3 class="text-white text-3xl font-bold descargar">Descargar</h3>
-                    
-                        <!-- Botón con icono -->
-                        <button class="flex items-center justify-center bg-neutral-content text-white p-3 rounded-lg">
+<!--  -->
+
+                        <!-- Botón de Descargar -->
+                        <button id="downloadButton" class="flex items-center justify-center bg-neutral-content text-white p-3 rounded-lg">
                             <i class="fas fa-download text-white text-6xl"></i>
+                        </button>
+                        
+                        <!-- Modal para el QR -->
+                        <div id="qrModal" class="modal hidden fixed inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                            <div class="modal-content bg-black p-6 rounded-lg flex flex-col items-center">
+                            <h3 class="text-white text-2xl font-semibold mb-4">Escanea el código QR</h3>
+                            <img src="../static/img/codigoqr.jpg" alt="Código QR" class="qr-image w-40 h-40">
+                            <button id="closeModal" class="mt-4 px-4 py-2 bg-pink-500 text-white rounded">Cerrar</button>
+                            </div>
+                        </div>
+                        
+                    
+
+                        <button class="flex items-center justify-center bg-neutral-content text-white p-3 rounded-lg">
                         </button>
                         <div class="oval left"></div>
                         <div class="oval right"></div>
@@ -422,7 +460,31 @@ ctx.quadraticCurveTo(100, 95, 90, 70);
 ctx.quadraticCurveTo(80, 95, 80, 105);
 ctx.stroke();
 
+</script>
+<script>
+    // JavaScript para mostrar y ocultar la ventana modal
+document.addEventListener("DOMContentLoaded", function () {
+  const downloadButton = document.getElementById("downloadButton");
+  const qrModal = document.getElementById("qrModal");
+  const closeModal = document.getElementById("closeModal");
 
+  // Mostrar el modal al hacer clic en el botón Descargar
+  downloadButton.addEventListener("click", function () {
+    qrModal.classList.remove("hidden");
+  });
+
+  // Cerrar el modal al hacer clic en el botón Cerrar
+  closeModal.addEventListener("click", function () {
+    qrModal.classList.add("hidden");
+  });
+
+  // Cerrar el modal al hacer clic fuera del contenido
+  qrModal.addEventListener("click", function (e) {
+    if (e.target === qrModal) {
+      qrModal.classList.add("hidden");
+    }
+  });
+});
 </script>
 {% endblock %}
 
